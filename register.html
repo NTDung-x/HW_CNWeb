@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Register - Blakletterpress Website Template</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+	<div id="page">
+		<div id="header">
+			<div id="motto">
+				<a href="index.html" class="sitename"><img src="images/blakletterpress.png" height="24" width="142" alt="SiteName"></a>
+				<p><img src="images/header-text.png" height="14" width="218" alt="Text"></p>
+			</div>
+			<div id="logo">
+				<a href="index.html"><img src="images/logo.png" alt="LOGO"></a>
+			</div>
+			<div id="searchbar">
+				<form action="#" method="post">
+					<input type="text" value="Enter search query" class="txtfield" onBlur="javascript:if(this.value==''){this.value=this.defaultValue;}" onFocus="javascript:if(this.value==this.defaultValue){this.value='';}">
+					<input type="submit" value="Search" class="btn">
+				</form>
+			</div>
+		</div>
+		<div id="contents">
+			<div id="main">
+				<div class="body">
+					<h2>Subscription Form</h2>
+					<p>Fill in the information below to receive our periodic newsletter. Fields marked with * are required.</p>
+					
+					<form action="#" method="post">
+						<!-- Account Information -->
+						<fieldset style="margin-bottom: 20px; border: 1px solid #c3baaf; padding: 15px;">
+							<legend style="font-weight: bold; color: #300302;">Account Information</legend>
+							<p>
+								<label for="fullname">Full Name *</label><br>
+								<input type="text" id="fullname" name="fullname" placeholder="John Doe" required style="width: 60%; padding: 4px;">
+							</p>
+							<p>
+								<label for="email">Email *</label><br>
+								<input type="email" id="email" name="email" placeholder="john@example.com" required style="width: 60%; padding: 4px;">
+							</p>
+							<p>
+								<label for="password">Password * (min 8 characters)</label><br>
+								<input type="password" id="password" name="password" minlength="8" required style="width: 60%; padding: 4px;">
+							</p>
+							<p>
+								<label for="phone">Phone Number *</label><br>
+								<input type="tel" id="phone" name="phone" required style="width: 60%; padding: 4px;">
+							</p>
+						</fieldset>
+
+						<!-- Personal Information -->
+						<fieldset style="margin-bottom: 20px; border: 1px solid #c3baaf; padding: 15px;">
+							<legend style="font-weight: bold; color: #300302;">Personal Information</legend>
+							<p>
+								<label for="dob">Date of Birth *</label><br>
+								<input type="date" id="dob" name="dob" required style="padding: 4px;">
+							</p>
+							<p>
+								<label for="age">Age *</label><br>
+								<input type="number" id="age" name="age" min="1" required style="width: 60px; padding: 4px;">
+							</p>
+							<p>
+								<label>Gender *</label><br>
+								<input type="radio" id="male" name="gender" value="Male" required> <label for="male">Male</label> &nbsp;
+								<input type="radio" id="female" name="gender" value="Female"> <label for="female">Female</label> &nbsp;
+								<input type="radio" id="other" name="gender" value="Other"> <label for="other">Other</label>
+							</p>
+						</fieldset>
+
+						<!-- Subscription Preferences -->
+						<fieldset style="margin-bottom: 20px; border: 1px solid #c3baaf; padding: 15px;">
+							<legend style="font-weight: bold; color: #300302;">Subscription Preferences</legend>
+							<p>
+								<label>Topics of Interest</label><br>
+								<input type="checkbox" id="news" name="topics" value="News"> <label for="news">News</label> &nbsp;
+								<input type="checkbox" id="blog_topic" name="topics" value="Blog"> <label for="blog_topic">Blog</label> &nbsp;
+								<input type="checkbox" id="events" name="topics" value="Events"> <label for="events">Events</label>
+							</p>
+							<p>
+								<label for="region">Region</label><br>
+								<select id="region" name="region" style="padding: 4px;">
+									<option value="">-- Select Region --</option>
+									<option value="North America">North America</option>
+									<option value="Europe">Europe</option>
+									<option value="Asia">Asia</option>
+									<option value="Other">Other</option>
+								</select>
+							</p>
+							<p>
+								<label for="message">Message</label><br>
+								<textarea id="message" name="message" rows="4" style="width: 80%; padding: 4px;" placeholder="What would you like to tell us?"></textarea>
+							</p>
+						</fieldset>
+
+						<p>
+							<input type="checkbox" id="agree" name="agree" required>
+							<label for="agree">I agree to the Terms of Use *</label>
+						</p>
+
+						<p>
+							<input type="submit" value="Register" class="btn">
+							<input type="reset" value="Reset" class="btn">
+						</p>
+					</form>
+				</div>
+			</div>
+			
+			<div id="sidebar">
+				<div id="navigation">
+					<div>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="news.html">News</a></li>
+							<li><a href="blog.html">Blog</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="section">
+					<div id="connect">
+						<h2>Connect with us:</h2>
+						<a href="#" class="twitter"></a> <a href="#" class="facebook"></a> <a href="#" class="googleplus"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div>
+				<p id="footnote">© Copyright © 2011.Company name all rights reserved</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
