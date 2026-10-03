@@ -30,8 +30,10 @@ a {
 	color: inherit;
 }
 
+/* Sửa lỗi 1: Cứu sống position: sticky cho header */
 .page {
-	overflow-x: hidden;
+    /* overflow-x: hidden; XÓA DÒNG NÀY VÌ GÂY CHẾT STICKY */
+    overflow-x: clip; /* Cách hiện đại để giấu overflow ngang mà không làm mất tính năng sticky */
 }
 
 /* ===== Header / thanh điều hướng ===== */
@@ -80,11 +82,15 @@ a {
 	overflow: hidden;
 }
 
+/* Sửa lỗi 4 ẩn sâu: Đưa Hero Background về đúng bản chất lớp nền */
 .hero-bg {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	transform: scale(1.08);
+    position: absolute; /* THÊM: Tách khỏi document flow */
+    top: 0;             /* THÊM */
+    left: 0;            /* THÊM */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.08);
 }
 
 .hero-overlay {
@@ -140,38 +146,46 @@ a {
 	gap: 24px;
 }
 
+/* Sửa lỗi 2: Trả lại Box Model chuẩn và Sửa lỗi 5 ẩn sâu: Flex nội bộ */
 .card {
-	flex: 0 0 calc((100% - 48px) / 3);
-	min-height: 320px;
-	position: relative;
-	box-sizing: content-box;
-	background: #fff;
-	border: 1px solid #e0d8c8;
-	border-radius: 8px;
-	padding: 16px;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    flex: 0 0 calc((100% - 48px) / 3);
+    min-height: 320px;
+    position: relative;
+    /* box-sizing: content-box; XÓA BỎ NGAY LẬP TỨC để hết rớt hàng */
+    background: #fff;
+    border: 1px solid #e0d8c8;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    
+    /* THÊM: Biến thẻ thành Flex Container để căn chỉnh nội dung theo chiều dọc */
+    display: flex;
+    flex-direction: column;
 }
 
+/* Sửa lỗi 3: Cấp quyền ưu tiên cho Badge */
 .badge {
-	position: absolute;
-	top: 12px;
-	right: 12px;
-	background: #c0392b;
-	color: #fff;
-	font-size: 14px;
-	font-weight: bold;
-	padding: 4px 10px;
-	border-radius: 20px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 10; /* THÊM: Đảm bảo Badge luôn luôn nổi trên cùng */
+    background: #c0392b;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 20px;
 }
 
+/* Sửa lỗi 4: Xóa bỏ Z-index vô nghĩa gây lỗi Stacking */
 .card img {
-	display: block;
-	width: 100%;
-	height: 180px;
-	object-fit: cover;
-	border-radius: 4px;
-	position: relative;
-	z-index: 2;
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+    /* position: relative; XÓA BỎ: dư thừa */
+    /* z-index: 2; XÓA BỎ: nguyên nhân gây đè badge */
 }
 
 .card-body h3 {
