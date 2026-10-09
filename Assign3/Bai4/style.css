@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #d35400;
     --bg-color: #f9f7f2;
     --surface-color: #ffffff;
     --text-color: #333333;
-    --font-heading: 'Georgia', serif;
-    --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-heading: 'Merriweather', serif;
+    --font-body: 'Inter', sans-serif;
 }
 
 * {
